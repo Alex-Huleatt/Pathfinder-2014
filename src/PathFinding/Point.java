@@ -26,10 +26,8 @@ public class Point {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + this.x;
-        hash = 59 * hash + this.y;
-        return hash;
+        /* fails for negative numbers and numbers larger than 2^15 */
+        return (this.x << 16) & this.y;
     }
     
     @Override
