@@ -38,7 +38,7 @@ public class BossList<E> {
         this.cap = cap;
         length = 0;
         soFar = 0;
-        map = new HashMap<>(length);
+        map = new HashMap<E, Integer>(length);
     }
 
     public void add(E val) throws IndexOutOfBoundsException {

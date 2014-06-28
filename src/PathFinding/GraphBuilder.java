@@ -79,7 +79,7 @@ public class GraphBuilder {
         this.height = height;
         map = new boolean[length][height];
         obstacles = new Point[10000];
-        waypoints = new BossList<>(10000);
+        waypoints = new BossList<Point>(10000);
         obstacle_index = 0;
         adj_matrix = new int[2][2];
     }
@@ -142,7 +142,7 @@ public class GraphBuilder {
      * @param ps List of obstacle positions to add.
      */
     public void addObstacles(Point[] ps) {
-        ArrayList<Point> toCheck = new ArrayList<>(ps.length);
+        ArrayList<Point> toCheck = new ArrayList<Point>(ps.length);
         for (Point p : ps) {
             if (!map[p.x][p.y]) {
                 map[p.x][p.y] = true;
